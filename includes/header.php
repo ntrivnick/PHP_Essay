@@ -13,7 +13,7 @@
   <!-- My CSS -->
   <link rel="stylesheet" href="/css/headerFooter.css">
 
-  <title> Μεταπτυχιακό - <?php echo $title ?></title>
+  <title> Μεταπτυχιακό - <?php echo $title; ?></title>
 </head>
 
 <body>

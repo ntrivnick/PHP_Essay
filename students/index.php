@@ -1,9 +1,9 @@
- <?php
+<?php
   $title = 'Αρχική';
   require_once 'includes/header.php';
    ?>
 
- <h1>Nick you did it!!! Yea!!!</h1>   
+ <h1>Nick you did it!!!</h1>   
 
  <button type="button" class="btn btn-primary">Primary</button>
 <button type="button" class="btn btn-secondary">Secondary</button>
