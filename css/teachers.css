@@ -1,0 +1,25 @@
+#teacher_img{
+    width: 50px;
+    height: 60px;
+}
+
+
+/* ======================================= */
+/* ============= Table ================== */
+/* ======================================= */
+
+/* align text in the center of cells */
+td{
+    text-align: center;
+    padding-top: 30px!important;
+}
+
+/* align content in the center of header cells */
+th{
+    text-align: center;
+}
+
+/* erase the top border/line of the table */
+#no-border-top{
+    border-top:1px solid white!important;
+}
