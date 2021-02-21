@@ -1,6 +1,7 @@
  <?php
   $title = 'Αρχική';
   require_once 'includes/header.php';
+  //require_once 'db/connectDB.php';
    ?>
 
  <h1>Nick you did it!!! Yea!!!</h1>   
