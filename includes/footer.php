@@ -6,7 +6,7 @@
       <div>Email: info@university.gr</div>
     </div>
     <div class="ml-5 pl-5">
-      <a href="/assets/termsOfUse.pdf" target="_blank">Όροι χρήσης</a> | <a href="/assets/confintential.pdf" target="_blank">Πολιτική απορρήτου</a>
+      <a href="assets/termsOfUse.pdf" target="_blank">Όροι χρήσης</a> | <a href="assets/confintential.pdf" target="_blank">Πολιτική απορρήτου</a>
     </div>
   </div>
   <!-- End of Footer -->
@@ -25,7 +25,7 @@
     crossorigin="anonymous"></script>
 
   <!-- My JS -->
-  <script src="/js/header.js"></script>
+  <script src="js/header.js"></script>
 </body>
 
 </html>

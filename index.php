@@ -4,17 +4,53 @@
   //require_once 'db/connectDB.php';
    ?>
 
- <h1>Nick you did it!!! Yea!!!</h1>   
+ <!-- Begin page content -->
+  <!-- Announcements -->
+  <div class="d-flex flex-column justify-content-around item">
+    <div class="div-flex pl-2">
+      <h3 class="font-weight-bold">ΑΝΑΚΟΙΝΩΣΕΙΣ</h3>
+    </div>
 
- <button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-dark">Dark</button>
+    <div class="d-flex">
+      <div class="w-25 ml-5">
+        <img src="assets/images/announcement-icon-symbol.jpg" class="img-fluid" alt="announcement-icon">
+      </div>
+      <div class="w-75 mr-5 pr-5">
+        <h4><a href="html/oneAnnouncement.html">Τίτλος ανακοίνωσης 1</a></h4>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex corrupti aspernatur quisquam eum expedita quia,
+          in
+          commodi officia ea animi voluptatem molestias veniam modi inventore hic incidunt nihil magnam nesciunt.</p>
+      </div>
+    </div>
 
-<button type="button" class="btn btn-link">Link</button>
+    <div class="d-flex flex-row-reverse">
+      <div class="w-25 ml-5">
+        <img src="assets/images/announcement-icon-symbol.jpg" class="img-fluid" alt="announcement-icon">
+      </div>
+      <div class="w-75 ml-5 pl-5">
+        <div class="d-flex flex-row-reverse"><h4><a href="html/oneAnnouncement.html">Τίτλος ανακοίνωσης 2</a></h4></div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex corrupti aspernatur quisquam eum expedita quia,
+          in
+          commodi officia ea animi voluptatem molestias veniam modi inventore hic incidunt nihil magnam nesciunt.</p>
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <div class="w-25 ml-5">
+        <img src="assets/images/announcement-icon-symbol.jpg" class="img-fluid" alt="announcement-icon">
+      </div>
+      <div class="w-75 mr-5 pr-5">
+        <h4><a href="html/oneAnnouncement.html">Τίτλος ανακοίνωσης 3</a></h4>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex corrupti aspernatur quisquam eum expedita quia,
+          in
+          commodi officia ea animi voluptatem molestias veniam modi inventore hic incidunt nihil magnam nesciunt.</p>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <h4><a href="html/allAnnouncements.html">ΟΛΕΣ ΟΙ ΑΝΑΚΟΙΝΩΣΕΙΣ</a></h4>
+    </div>
+  </div>
+  <!-- End page content -->
 
  <?php require_once 'includes/footer.php'; ?>
