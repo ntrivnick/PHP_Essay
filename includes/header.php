@@ -11,7 +11,7 @@
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
   <!-- My CSS -->
-  <link rel="stylesheet" href="css/headerFooter.css">
+  <link rel="stylesheet" href="headerFooter.css">
 
   <title> Μεταπτυχιακό - <?php echo $title; ?></title>
 </head>
@@ -27,7 +27,7 @@
         <div class="col-4">
           <p class="text-center">
             <a href="index.php">
-              <img alt="logo" src="assets/images/logo_200x200.png" id="img">
+              <img alt="logo" src="assets/logo_200x200.png" id="img">
             </a>
           </p>
         </div>

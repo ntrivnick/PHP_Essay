@@ -48,7 +48,7 @@
     </div>
 
     <div class="d-flex justify-content-center">
-      <h4><a href="html/allAnnouncements.html">ΟΛΕΣ ΟΙ ΑΝΑΚΟΙΝΩΣΕΙΣ</a></h4>
+      <h4><a href="html/allAnnouncements.php">ΟΛΕΣ ΟΙ ΑΝΑΚΟΙΝΩΣΕΙΣ</a></h4>
     </div>
   </div>
   <!-- End page content -->
