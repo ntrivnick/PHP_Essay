@@ -24,8 +24,8 @@
     integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
     crossorigin="anonymous"></script>
 
-  <!-- My JS -->
-  <script src="js/header.js"></script>
+   <!-- My JS -->
+  <script src="header.js"></script>
 </body>
 
 </html>

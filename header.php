@@ -26,8 +26,8 @@
       <div class="row">
         <div class="col-4">
           <p class="text-center">
-            <a href="index.php">
-              <img alt="logo" src="assets/logo_200x200.png" id="img">
+            <a href="./index.php">
+              <img alt="logo" src="./assets/logo_200x200.png" id="img">
             </a>
           </p>
         </div>
@@ -41,7 +41,7 @@
           <p class="text-center">ΠΑΝΕΠΙΣΤΗΜΙΟ .........</p>
         </div>
         <div class="col-4">
-          <p class="text-center" id="entryLink"><a href="html/login.php">Είσοδος</a></p>
+          <p class="text-center" id="entryLink"><a href="./login.php">Είσοδος</a></p>
         </div>
       </div>
       <!-- ending of text in middle of header -->
@@ -49,24 +49,24 @@
       <!-- navs for navigating the site -->
       <ul class="nav nav-pills nav-justified" id="navLinks">
         <li class="nav-item">
-          <a class="nav-link active" href="index.php">Αρχική</a>
+          <a class="nav-link active" href="./index.php">Αρχική</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="html/lessons.php">Μαθήματα</a>
+          <a class="nav-link" href="./lessons.php">Μαθήματα</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link" href="#">Προσωπικό</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="html/teachers.php">Διδάσκοντες</a>
-            <a class="dropdown-item" href="html/secretaries.php">Γραμματεία</a>
+            <a class="dropdown-item" href="./teachers.php">Διδάσκοντες</a>
+            <a class="dropdown-item" href="./secretaries.php">Γραμματεία</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="html/studyRules.php">Κανονισμός Σπουδών</a>
+          <a class="nav-link" href="./studyRules.php">Κανονισμός Σπουδών</a>
         </li>
       </ul>
       <!-- ending of navs for navigating the site -->
 
-    </div>
+    </div>   
   </header>
   <!-- End of header -->
