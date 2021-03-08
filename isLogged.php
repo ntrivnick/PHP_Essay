@@ -8,10 +8,10 @@ if (isset($_POST['submit'])) {
     $ok = true;
 
     //Check for insertion of email value from user
-    if (!isset($_POST['username']) || $_POST['username'] === '') {
+    if (!isset($_POST['email']) || $_POST['email'] === '') {
         $ok = false;
     } else {
-        $email = $_POST['username'];
+        $email = $_POST['email'];
     }
     ;
 
@@ -25,30 +25,44 @@ if (isset($_POST['submit'])) {
 }
 ;
 
-//Query DB for all rows of users table
-$sql = 'SELECT * FROM χρήστης';
+//Query DB for inserted username by the user
+$sql = "SELECT * FROM χρήστης WHERE Email='" . $_POST['email'] . "'";
 $res = $connection->query($sql);
 
-    foreach ($res as $row) {
+//Checking if there is a row in DB with the inserted email
+$row = mysqli_num_rows($res);
 
-        $id_user = $row['id_Χρήστη'];
-        $name = $row['Όνομα'];
-        $surname = $row['Επώνυμο'];
-        $emailAddress = $row['Email'];
-        $psswrd = $row['Password'];
-        $role = $row['Ρόλος'];
+//If there is a row in DB with the inserted email
+if ($row != 0) {
+    $userInfo = mysqli_fetch_row($res);
+    $id_user = $userInfo[0];
+    $name = $userInfo[1];
+    $surname = $userInfo[2];
+    $emailAddress = $userInfo[4];
+    $psswrd = $userInfo[5];
+    $role = $userInfo[6];
 
-        //Check if user entered correct password
-        if ($password != $psswrd) {
-            echo '<script language="javascript">
+    //Check if user entered correct password
+    if ($password != $psswrd) {
+        echo '<script language="javascript">
         alert("Λάθος Password!!!");
         document.location="login.php";</script>';
-            exit();
-        } else {
-            echo '<script language="javascript">
-        alert("Σωστό Password!!!");
-        </script>';
-            exit();
-        }
+        exit();
+    } else {
+        //Storing info of the user in a session for further use
+        session_start();
+        $_SESSION['user_id'] = $id_user;
+        $_SESSION['user_name'] = $name;
+        $_SESSION['user_surname'] = $surname;
+        $_SESSION['user_email'] = $emailAddress;
+        $_SESSION['user_password'] = $psswrd;
+        $_SESSION['user_role'] = $role;
+
+        header("Location: index.php");
     }
+}
 ;
+
+echo '<script language="javascript">
+        alert("Λάθος username!!!");
+        document.location="login.php";</script>';
