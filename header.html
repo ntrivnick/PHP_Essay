@@ -13,12 +13,14 @@
   <!-- My CSS -->
   <link rel="stylesheet" href="headerFooter.css">
 
-  <title> Μεταπτυχιακό - <?php echo $title; ?></title>
+  <title> Μεταπτυχιακό -
+    <?php echo $title; ?>
+  </title>
 </head>
 
 <body>
-  
-<!-- Begin of header -->
+
+  <!-- Begin of header -->
   <header>
 
     <div class="jumbotron">
@@ -42,6 +44,7 @@
         </div>
         <div class="col-4">
           <p class="text-center" id="entryLink"><a href="./login.php">Είσοδος</a></p>
+          <p class="text-center"><a href="./logout.php">Έξοδος</a></p>
         </div>
       </div>
       <!-- ending of text in middle of header -->
@@ -64,9 +67,44 @@
         <li class="nav-item">
           <a class="nav-link" href="./studyRules.php">Κανονισμός Σπουδών</a>
         </li>
+
+        <!-- Checking if user is administrator and displaying the relative pages -->
+        <?php if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == "Διαχειριστής"){ ?>
+           <li class="nav-item dropdown">
+            <a class="nav-link" href="#">Γραμματεία</a>
+            <div class="dropdown-menu">
+            <a class="dropdown-item" href="./handleUsers.php">Επεξεργασία στοιχείων χρήστη</a>
+            <a class="dropdown-item" href="./handleLessons.php">Διαχείριση μαθημάτων</a>
+            <a class="dropdown-item" href="./studentProgress.php">Προβολή προόδου φοιτητών</a>
+            </div>
+            </li>
+             <?php } ?>
+
+             <!-- Checking if user is professor and displaying the relative pages -->
+            <?php if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == "Διδάσκων"){ ?>
+            <li class="nav-item dropdown">
+            <a class="nav-link" href="#">Teacher</a>
+             <div class="dropdown-menu">
+            <a class="dropdown-item" href="./teachers.php">Helen</a>
+            <a class="dropdown-item" href="./secretaries.php">Nick</a>
+            </div>
+            </li>
+            <?php } ?>
+
+            <!-- Checking if user is student and displaying the relative pages -->
+            <?php if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == "Φοιτητής"){ ?>
+              <li class="nav-item dropdown">
+              <a class="nav-link" href="#">Student</a>
+               <div class="dropdown-menu">
+              <a class="dropdown-item" href="./teachers.php">Helen</a>
+              <a class="dropdown-item" href="./secretaries.php">Nick</a>
+              </div>
+              </li>
+              <?php } ?>
+
       </ul>
       <!-- ending of navs for navigating the site -->
 
-    </div>   
+    </div>
   </header>
   <!-- End of header -->

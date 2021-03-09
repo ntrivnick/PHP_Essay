@@ -1,8 +1,9 @@
  <?php
-  $title = 'Αρχική';
-  require_once 'header.php';
-  //require_once 'db/connectDB.php';
-   ?>
+session_start();
+$title = 'Αρχική';
+require_once 'header.html';
+require_once 'db/connectDB.php';
+?>
 
  <!-- Begin page content -->
   <!-- Announcements -->
@@ -53,4 +54,4 @@
   </div>
   <!-- End page content -->
 
- <?php require_once 'footer.php'; ?>
+ <?php require_once 'footer.html';?>

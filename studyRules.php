@@ -1,6 +1,6 @@
 <?php
   $title = 'Κανονισμός Σπουδών';
-  require_once './header.php';
+  require_once './header.html';
   //require_once 'db/connectDB.php';
  
    ?>
@@ -23,4 +23,4 @@
    
   <!-- End page content -->
 
-  <?php require_once './footer.php'; ?>
+  <?php require_once './footer.html'; ?>
