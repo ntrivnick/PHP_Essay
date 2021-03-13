@@ -30,6 +30,15 @@ while ($row = mysqli_fetch_array($res)) {
 ;
 ?>
 
+<script>
+  //Javascript function for questioning admin of deleting a user 
+  function deleteUser(id) {
+    let confirmed = confirm("Επιθυμείτε να διαγράψετε τον χρήστη;");
+    if (confirmed==true) {
+      let str="./deleteUser.php?user_id="+id;
+    };
+  };
+</script>
 
 <!-- Creating table of users and populate it with data of users -->
 <div class="flex">
@@ -84,11 +93,13 @@ if ($value['Ρόλος'] == 'Διδάσκων') {
     <td><?=$value['Ημερομηνία_Πρώτης_Εγγραφής']?></td>
     <td class="text-center"><?=$value['Αριθμός_Μητρώου']?></td>
 
-    <td class="text-center"><img src="./assets/editButton.png" alt="Επεξεργασία" style="width: 35%;"
-    onclick="'editUser(<?=$value['id_Χρήστη']?>)'"></td>
-    
+    <td class="text-center">
+      <img src="./assets/editButton.png" alt="Επεξεργασία" style="width: 35%;"
+       onclick="location.href='editUserForm.php?user_id = <?=$value['id_Χρήστη']?>'">
+    </td>
+
     <td class="text-center"><img src="./assets/deleteButton.png" alt="Διαγραφή" style="width: 35%;"
-    onclick="'deleteUser(<?=$value['id_Χρήστη']?>)'"></td>
+    onclick="deleteUser(<?=$value['id_Χρήστη']?>)"></td>
 
   </tr>
 <?php }?>
@@ -100,7 +111,7 @@ if ($value['Ρόλος'] == 'Διδάσκων') {
     <!-- Button for inserting user in DB/application -->
     <div class="flex">
       <div class="row p-3 ml-2">
-          <button type="button" class="btn btn-primary" onclick="location.ref=insertUser.php">Εισαγωγή Χρήστη</button>
+          <button type="button" class="btn btn-primary" onclick="location.href='insertUserForm.php'">Εισαγωγή Χρήστη</button>
       </div>
     </div>
 </div>
