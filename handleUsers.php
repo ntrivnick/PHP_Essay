@@ -12,7 +12,6 @@ $res = $connection->query($sql);
 
 $user;
 $index = 0;
-
 //Fetching users from DB
 while ($row = mysqli_fetch_array($res)) {
     $user[$index]['id_Χρήστη'] = $row['id_Χρήστη'];
@@ -27,7 +26,8 @@ while ($row = mysqli_fetch_array($res)) {
     $user[$index]['Ημερομηνία_Πρώτης_Εγγραφής'] = $row['Ημερομηνία_Πρώτης_Εγγραφής'];
     $user[$index]['Αριθμός_Μητρώου'] = $row['Αριθμός_Μητρώου'];
     $index++;
-};
+}
+;
 ?>
 
 
@@ -36,11 +36,11 @@ while ($row = mysqli_fetch_array($res)) {
     <div class="flex pl-2">
         <h4 class="font-weight-bold">ΔΙΑΧΕΙΡΙΣΗ ΧΡΗΣΤΩΝ</h4>
     </div>
-    <div class="flex p-4">
-        <table class="table table-bordered">
+    <div class="flex p-1">
+        <table class="table table-bordered small">
             <thead>
               <tr>
-                <th scope="col">Id_Χρήστη</th>
+                <th scope="col">Id</th>
                 <th scope="col">Όνομα</th>
                 <th scope="col">Επώνυμο</th>
                 <th scope="col">Κινητό</th>
@@ -51,78 +51,61 @@ while ($row = mysqli_fetch_array($res)) {
                 <th scope="col">Ημ. Γέννησης</th>
                 <th scope="col">Ημ. Εγγραφής</th>
                 <th scope="col">Αρ. Μητρώου</th>
+                <th scope="col">Επεξ.</th>
+                <th scope="col">Διαγρ.</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row" id="pt-62">1</th>
-                <td>Όνομα βασικού μαθήματος 1</td>
-                <td>Όνομα διδάσκοντα 1</td>
-                <td class="text-center">5</td>
-                <td>Βασικό</td>
-              </tr>
-              <tr>
-                <td>Όνομα βασικού μαθήματος 2</td>
-                <td>Όνομα διδάσκοντα 2</td>
-                <td class="text-center">5</td>
-                <td>Βασικό</td>
-              </tr>
-              <tr>
-                <td>Όνομα βασικού μαθήματος 3</td>
-                <td>Όνομα διδάσκοντα 3</td>
-                <td class="text-center">5</td>
-                <td>Βασικό</td>
-              </tr>
-              <tr>
-                <th scope="row" id="pt-62">2</th>
-                <td>Όνομα βασικού μαθήματος 4</td>
-                <td>Όνομα διδάσκοντα 1</td>
-                <td class="text-center">5</td>
-                <td>Βασικό</td>
-              </tr>
-              <tr>
-                <td>Όνομα βασικού μαθήματος 5</td>
-                <td>Όνομα διδάσκοντα 2</td>
-                <td class="text-center">5</td>
-                <td>Βασικό</td>
-              </tr>
-              <tr>
-                <td>Όνομα βασικού μαθήματος 6</td>
-                <td>Όνομα διδάσκοντα 4</td>
-                <td class="text-center">5</td>
-                <td>Βασικό</td>
-              </tr>
-              <tr>
-                <th scope="row" id="pt-80">3</th>
-                <td>Όνομα βασικού μαθήματος 7</td>
-                <td>Όνομα διδάσκοντα 1</td>
-                <td class="text-center">5</td>
-                <td>Βασικό</td>
-              </tr>
-              <tr>
-                <td>Όνομα βασικού μαθήματος 8</td>
-                <td>Όνομα διδάσκοντα 2</td>
-                <td class="text-center">5</td>
-                <td>Βασικό</td>
-              </tr>
-              <tr>
-                <td>Όνομα μαθήματος επιλογής 1</td>
-                <td>Όνομα διδάσκοντα 3</td>
-                <td class="text-center">5</td>
-                <td>Επιλογής</td>
-              </tr>
-              <tr>
-                <td>Όνομα μαθήματος επιλογής 2</td>
-                <td>Όνομα διδάσκοντα 4</td>
-                <td class="text-center">5</td>
-                <td>Επιλογής</td>
-              </tr>
+
+<?php foreach ($user as $key => $value) {?>
+
+  <tr>
+    <th scope="row"> <?=$value['id_Χρήστη']?> </th>
+    <td><?=$value['Όνομα']?></td>
+    <td><?=$value['Επώνυμο']?></td>
+    <td><?=$value['Κινητό']?></td>
+    <td><?=$value['Email']?></td>
+    <td><?=$value['Password']?></td>
+
+
+  <?php
+if ($value['Ρόλος'] == 'Διδάσκων') {
+    $role = 'Διδάσκων';
+} else if ($value['Ρόλος'] == 'Φοιτητής') {
+    $role = 'Φοιτητής';
+} else {
+    $role = 'Διαχειριστής';
+}
+    ?>
+    <td><?=$role?></td>
+
+    <td><?=$value['Διεύθυνση']?></td>
+    <td><?=$value['Ημερομηνία_Γέννησης']?></td>
+    <td><?=$value['Ημερομηνία_Πρώτης_Εγγραφής']?></td>
+    <td class="text-center"><?=$value['Αριθμός_Μητρώου']?></td>
+
+    <td class="text-center"><img src="./assets/editButton.png" alt="Επεξεργασία" style="width: 35%;"
+    onclick="'editUser(<?=$value['id_Χρήστη']?>)'"></td>
+    
+    <td class="text-center"><img src="./assets/deleteButton.png" alt="Διαγραφή" style="width: 35%;"
+    onclick="'deleteUser(<?=$value['id_Χρήστη']?>)'"></td>
+
+  </tr>
+<?php }?>
+
             </tbody>
           </table>
+    </div>
+
+    <!-- Button for inserting user in DB/application -->
+    <div class="flex">
+      <div class="row p-3 ml-2">
+          <button type="button" class="btn btn-primary" onclick="location.ref=insertUser.php">Εισαγωγή Χρήστη</button>
+      </div>
     </div>
 </div>
 
 
 <!-- End page content -->
 
-<?php require_once 'footer.html'; ?> 
+<?php require_once 'footer.html';?>
