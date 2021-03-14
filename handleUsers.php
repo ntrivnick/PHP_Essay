@@ -40,6 +40,8 @@ while ($row = mysqli_fetch_array($res)) {
   };
 </script>
 
+<!-- Begin page content -->
+
 <!-- Creating table of users and populate it with data of users -->
 <div class="flex">
     <div class="flex pl-2">
