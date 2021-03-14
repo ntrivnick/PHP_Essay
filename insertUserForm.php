@@ -108,9 +108,9 @@ function userIsStudent(par) {
         </div>
 
         <div class="form-group row">
-            <label for="role" class="col-sm-4 col-form-label">Ρόλος</label>
+            <label for="defineUserRole" class="col-sm-4 col-form-label">Ρόλος</label>
             <?php echo
-             " <select name='rule' id='mySelect' onChange='check(this);';>
+             " <select name='defineUserRole' id='mySelect' onChange='userIsStudent(this);';>
                 <option>Γραμματεία</option>
                 <option>Καθηγητής</option>
                 <option>Φοιτητής</option>

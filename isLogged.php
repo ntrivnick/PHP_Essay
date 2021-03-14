@@ -1,5 +1,5 @@
 <?php
-require_once 'db/connectDB.php'; //Σύνδεση με ΒΔ
+require_once 'db/connectDB.php'; //Connection to DB
 
 $email = '';
 $password = '';
