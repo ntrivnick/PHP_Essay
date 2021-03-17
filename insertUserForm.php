@@ -22,16 +22,6 @@ function validateRegister() {
         return true;
     }
 }
-
-//Checking if administrator registering a student
-//then field semester appears for inserting a value
-function userIsStudent(par) {
-    if (par.selectedIndex=='Φοιτητής') {
-        document.getElementById("isStudent").style.display='block';
-    }else{
-        document.getElementById("isStudent").style.display='none';
-    }
-}
 </script>
 
 <!-- Begin page content -->
@@ -108,22 +98,26 @@ function userIsStudent(par) {
         </div>
 
         <div class="form-group row">
-            <label for="defineUserRole" class="col-sm-4 col-form-label">Ρόλος</label>
-            <?php echo
-             " <select name='defineUserRole' id='mySelect' onChange='userIsStudent(this);';>
-                <option>Γραμματεία</option>
+            <label for="rule" class="col-sm-4 col-form-label">Ρόλος</label>
+            <div class="col-sm-8">
+            <select class="form-control" name='defineUserRole'>
+                <option>Διαχειριστής</option>
                 <option>Καθηγητής</option>
                 <option>Φοιτητής</option>
-            </select>"; ?>
+            </select>
+            </div>
         </div>
 
-        <div class="form-group row" id="isStudent" style="display: none;">
-            <label for="inputState">Εξάμηνο</label>
+        <div class="form-group row">
+            <label for="inputState" class="col-sm-4 col-form-label">Εξάμηνο</label>
+            <div class="col-sm-8">
             <select class="form-control" name="semester">
+                <option value=" "></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
             </select>
+            </div>
         </div>
 
         <button type="submit" name="submit" class="btn btn-primary">Υποβολή</button>
