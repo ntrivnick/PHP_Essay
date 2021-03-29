@@ -1,8 +1,38 @@
 <?php
-session_start();
-$title = 'Εγγραφή Χρηστών';
-require_once 'header.html';
 require_once 'db/connectDB.php';
+session_start();
+$title = 'Επεξεργασία Χρηστών';
+require_once 'header.html';
+?>
+
+<?php
+//Query for finding user
+$sql = "SELECT * from χρήστης LEFT JOIN εξάμηνο
+ΟΝ id_Χρήστη=id_Χρήστη_Φοιτητή WHERE id_Χρήστη='".$_GET['user_id']."'";
+$foundUser = $connection->query($sql);
+
+print_r($_GET);
+var_dump($foundUser);
+var_dump($sql);
+
+
+if ($foundUser) {
+    $row = mysqli_fetch_assoc($foundUser);
+    $id = $row['id_Χρήστη'];
+    $name = $row['Όνομα'];
+    $surname = $row['Επώνυμο'];
+    $mobile = $row['Κινητό'];
+    $email = $row['Email'];
+    $password = $row['Password'];
+    $role = $row['Ρόλος'];
+    $address = $row['Διεύθυνση'];
+    $birthdate = $row['Ημερομηνία_Γέννησης'];
+    $registerdate = $row['Ημερομηνία_Πρώτης_Εγγραφής'];
+    $registernumber = $row['Αριθμός_Μητρώου'];
+    $semesterid = $row['id_Εξαμήνου'];
+    $semester = $row['Εξάμηνο'];
+}
+
 ?>
 
 <script>
@@ -25,26 +55,25 @@ function validateRegister() {
 </script>
 
 <!-- Begin page content -->
-
 <div class="d-flex flex-column pl-2">
-      <h4 class="font-weight-bold">Εγγραφή</h4>
-      <p>Συμπληρώστε τα πεδία για εγγραφή χρήστη</p>
+      <h4 class="font-weight-bold">Επεξεργασία στοιχείων χρήστη</h4>
+      <p>Συμπληρώστε τα πεδία χρήστη που επιθυμείτε να τροποποιήσετε</p>
     </div>
 
     <div class="d-flex justify-content-center" id="h-50">
-      <form name="form" role="form" method="post" action="insertOfUser.php" onsubmit="return validateRegister()">
+      <form name="editform" role="form" method="post" action="updateOfUser.php" onsubmit="return validateRegister()">
 
         <div class="form-group row">
           <label for="surname" class="col-sm-4 col-form-label">Επώνυμο</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" name="surname" required>
+            <input type="text" class="form-control" name="surname">
           </div>
         </div>
 
         <div class="form-group row">
           <label for="name" class="col-sm-4 col-form-label">Όνομα</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" name="name" required>
+            <input type="text" class="form-control" name="name">
           </div>
         </div>
 

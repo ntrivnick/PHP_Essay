@@ -36,6 +36,7 @@ while ($row = mysqli_fetch_array($res)) {
     let confirmed = confirm("Επιθυμείτε να διαγράψετε τον χρήστη;");
     if (confirmed==true) {
       let str="./deleteUser.php?user_id="+id;
+      window.location=str;
     };
   };
 </script>
@@ -97,7 +98,7 @@ if ($value['Ρόλος'] == 'Διδάσκων') {
 
     <td class="text-center">
       <img src="./assets/editButton.png" alt="Επεξεργασία" style="width: 35%;"
-       onclick="location.href='editUserForm.php?user_id = <?=$value['id_Χρήστη']?>'">
+       onclick="location.href='editUserForm.php?user_id=<?=$value['id_Χρήστη']?>'">
     </td>
 
     <td class="text-center"><img src="./assets/deleteButton.png" alt="Διαγραφή" style="width: 35%;"
