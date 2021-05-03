@@ -4,8 +4,6 @@ $title = 'Επεξεργασία Χρηστών';
 require_once 'header.html';
 require_once 'db/connectDB.php';
 
-// Begin page content
-
 //Query DB for all users
 $sql = "SELECT * FROM χρήστης";
 $res = $connection->query($sql);

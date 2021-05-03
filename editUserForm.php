@@ -11,9 +11,9 @@ $sql = "SELECT * from χρήστης LEFT JOIN εξάμηνο
 ΟΝ id_Χρήστη=id_Χρήστη_Φοιτητή WHERE id_Χρήστη='".$_GET['user_id']."'";
 $foundUser = $connection->query($sql);
 
-print_r($_GET);
-var_dump($foundUser);
-var_dump($sql);
+//print_r($_GET);
+// var_dump($foundUser);
+// var_dump($sql);
 
 
 if ($foundUser) {

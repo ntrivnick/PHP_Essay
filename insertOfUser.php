@@ -58,7 +58,7 @@ if ($defineUserRole=='Φοιτητής') {
     $row=mysqli_fetch_assoc($resultOfQuery);
     $id=ceil($row["id_Χρήστη"]);
 
-    //Query for inserting the semester of student in the DB
+    //Query for inserting the semester of the student in the DB
     $insertSemester=sprintf(
     "INSERT INTO εξάμηνο (id_Εξάμηνο, id_Χρήστη_Φοιτητή, Εξάμηνο) VALUES(
        '%s', '%s', '%s')",
@@ -69,6 +69,20 @@ if ($defineUserRole=='Φοιτητής') {
 
     $connection->query($insertSemester);
     
+
+    //Query for inserting the registration of the student in the DB
+    for ($i=1; $i<= 10 ; $i++) { 
+        $insertRegistration=sprintf(
+            "INSERT INTO εγγραφές (id_Εγγραφής, id_Χρήστη, id_Μαθήματος, Κατάσταση) VALUES(
+               '%s', '%s', '%s', '%s')",
+               $connection->real_escape_string(''),
+               $connection->real_escape_string($id),
+               $connection->real_escape_string('$i'),
+               $connection->real_escape_string('0')
+            );
+
+            $connection->query($insertRegistration);
+    }
 }
 
 if ($insertUserQuery) {
